@@ -1,6 +1,6 @@
 # SillyList
 
-TODO: Write a gem description
+Array like classes. Add Stack behavior, Queue is coming.
 
 ## Installation
 

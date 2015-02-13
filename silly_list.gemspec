@@ -8,10 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = SillyList::VERSION
   spec.authors       = ['SiliconSalad Tech Team']
   spec.email         = ['tech@siliconsalad.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = 'Array like classes. Add Stack behavior, Queue is coming.'
   spec.homepage      = ''
-  spec.license       = 'WTFPL'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
