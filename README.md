@@ -20,7 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``` ruby
+  class NumberList << SillyList::UniqLifo
+  end
+
+  number_list = NumberList.new([1,2,3], max_size: 2)
+  number_list.list #=> [1,2]
+  number_list.add(3)
+  number_list.list #=> [3,1]
+  number_list.add(3)
+  number_list.list #=> [3,1]
+  number_list.add([4,5])
+  number_list.list #=> [4,5]
+  number_list.remove #=> 4
+  number_list.list #=> [5]
+```
+
+## Development
+
+Documenation:
+
+    $ bundle exec yard server --port 8828 --reload
+
+Tests:
+
+    $ rake spec
 
 ## Contributing
 

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-class FakeList < SillyList::UniqFifo
+class FakeList < SillyList::UniqLifo
 end
 
-describe SillyList::UniqFifo do
+describe SillyList::UniqLifo do
 
   subject { FakeList.new }
 
@@ -24,7 +24,7 @@ describe SillyList::UniqFifo do
   end
 
   describe '#list' do
-    it 'limit size of list at initialization' do
+    it 'limits size of list at initialization' do
       limit          = 3
       list           = [double, double, double, double]
       uniq_fifo_list = subject.class.new(list, max_size: limit)
@@ -86,6 +86,23 @@ describe SillyList::UniqFifo do
       it 'keeps the last insertion and remove the first' do
         expect(subject.list.index(@an_item)).to eq(0)
       end
+    end
+  end
+
+  describe '#remove' do
+    it 'returns the last added item' do
+      item = double
+      subject.add(item)
+      expect(subject.remove).to eq(item)
+    end
+
+    it 'removes the last added item' do
+      item_1 = double
+      item_2 = double
+      subject.add(item_1)
+      subject.add(item_2)
+      subject.remove
+      expect(subject.list).to eq [item_1]
     end
   end
 end
