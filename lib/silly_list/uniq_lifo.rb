@@ -14,12 +14,13 @@ module SillyList
   #   my_array.remove #=> 4
   #   my_array.list #=> [5]
   class UniqLifo
+    include List
 
     attr_reader :list, :max_size
 
     def initialize(list=[], max_size: 0)
-      @list     = init_list(list, max_size)
-      @max_size = max_size
+      @max_size = max_size.to_i
+      @list     = init_list(list.to_a, @max_size)
     end
 
     # Checks if list is empty
