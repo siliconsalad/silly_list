@@ -1,5 +1,7 @@
 # SillyList
 
+[![Gem Version](https://badge.fury.io/rb/silly_list.svg)](http://badge.fury.io/rb/silly_list)
+
 Array like classes. Add Stack behavior, Queue is coming.
 
 ## Installation
